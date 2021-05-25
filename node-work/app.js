@@ -12,7 +12,8 @@ var siginupRouter = require('./routes/siginup');
 var aboutRouter = require('./routes/about');
 var mandRouter = require('./routes/mand');
 var shopRouter = require('./routes/shopping');
-
+var addRouter = require('./routes/add');
+var checkRouter = require('./routes/check');
 
 var app = express();
 
@@ -39,6 +40,8 @@ app.use('/siginup',siginupRouter);
 app.use('/about-startup',aboutRouter);
 app.use('/mand',mandRouter);
 app.use('/shopping',shopRouter);
+app.use('/add',addRouter);
+app.use('/check',checkRouter);
 
 
 
