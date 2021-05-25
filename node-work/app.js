@@ -25,13 +25,7 @@ app.set('view engine', 'html');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser("123"));
-app.use(session({
-  secret:"123",
-  cookie:{
-    maxAge:600000
-  }
-  }));
+app.use(cookieParser(""));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);

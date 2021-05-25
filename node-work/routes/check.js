@@ -20,12 +20,13 @@ router.get('/:id',(req,res)=>{
     })
 })
 router.post('/',(req,res)=>{
+    let id=req.body.id;
+    let userid=req.body.userid;
     let name=req.body.name;
     let address=req.body.address;
     let people=req.body.people;
     let phone=req.body.phone;
-    let userid=req.body.userid;
-    let sql='update addcat set name="'+name+'", address="'+address+'",people="'+people+'",phone="'+phone+'" where  userid="'+userid+'"';
+    let sql='update addcat set name="'+name+'", address="'+address+'",people="'+people+'",phone="'+phone+'",userid="'+userid+'" where id="'+id+'" ';
     connection.query(sql,(err,result)=>{
         if(err){
             console.log(err)

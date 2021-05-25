@@ -41,7 +41,7 @@ router.post('/search',(req,res)=>{
         if(err){
             console.log(err);
         }else{
-            res.render('mand',{data:result,s_name:name,s_userid:userid});
+            res.render('mand',{title: 'Express',data:result,s_name:name,s_userid:userid});
         }
     })
 })

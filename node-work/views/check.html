@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link type="text/css" href="stylesheets/pixel.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/css/aos.css">
-    <link rel="stylesheet" href="stylesheets/css/style.css">
+    <link type="text/css" href="http://localhost:3000/stylesheets/pixel.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/css/aos.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/css/style.css">
 </head>
 <body>
     <form action="/check" method="POST">
-        <input placeholder="宠物店名称" name="name" type="text">
-        <input placeholder="宠物店地址" name="address" type="text">
-        <input placeholder="联系人" name="people" type="text">
-        <input type="text" placeholder="联系方式" name="phone">
-        <input type="text" placeholder="userid" name="userid">
+        <input placeholder="id" name="id" type="text" style="display: none;" value="<%= data[0].id%>">
+        <input placeholder="宠物店名称" name="name" type="text" value="<%= data[0].name %>">
+        <input placeholder="宠物店地址" name="address" type="text" value="<%= data[0].address%>">
+        <input placeholder="联系人" name="people" type="text" value="<%=data[0].people %>" >
+        <input placeholder="联系方式" name="phone" type="text" value="<%=data[0].phone %>" >
+        <input placeholder="userid" name="userid" type="text" value="<%=data[0].userid %>" >
         <br/>
         <input type="submit" placeholder="提交">
     </form>
