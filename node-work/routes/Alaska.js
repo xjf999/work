@@ -1,5 +1,5 @@
-let express=require('express');
-let router=express.Router();
+var express=require('express');
+var router=express.Router();
 var mysql=require('mysql');
 var connection=mysql.createConnection({
     host:'localhost',
@@ -9,12 +9,9 @@ var connection=mysql.createConnection({
     database:'project'
 });
 router.get('/',(req,res)=>{
-    var sql="select * from product"
+    var sql="select * from product where type='Alaska'";
     connection.query(sql,(err,result)=>{
-        if(err){
-            console.log(err)
-        }
-        res.render('shopping',{data:result})
+        res.render('Alaska',{data:result})
     })
-});
+})
 module.exports=router;

@@ -1,6 +1,6 @@
-let express=require('express');
-let router=express.Router();
+var express=require('express');
 var mysql=require('mysql');
+var router=express.Router();
 var connection=mysql.createConnection({
     host:'localhost',
     user:'root',
@@ -8,13 +8,12 @@ var connection=mysql.createConnection({
     port:'3306',
     database:'project'
 });
-router.get('/',(req,res)=>{
-    var sql="select * from product"
+router.get('/:id',(req,res)=>{
+    var id=req.params.id;
+    var sql="select * from product where id='"+id+"'";
     connection.query(sql,(err,result)=>{
-        if(err){
-            console.log(err)
-        }
-        res.render('shopping',{data:result})
+        res.render('shopdetail',{data:result});
     })
-});
+    
+})
 module.exports=router;
