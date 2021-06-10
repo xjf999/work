@@ -27,21 +27,14 @@ router.get('/:id',(req,res)=>{
     })
 });
 router.post('/search',(req,res)=>{
-    var name=req.body.s_name;
-    var userid=req.body.s_userid;
-    var sql = " select * from addcat ";
-    if(name){
-        sql+= " and people = '" + name + "'";
-    }
-    if(userid){
-        sql+= " and userid = '" + userid + "'";
-    }
-    sql=sql.replace("and","where");
+    var name=req.body.sname;
+    var sql = " select * from addcat where name='"+name+"' or people='"+name+"' or address='"+name+"' or phone='"+name+"' or userid='"+name+"' or id='"+name+"' ";
     connection.query(sql,(err,result)=>{
+        console.log(sql)
         if(err){
-            console.log(err);
+            res.send("不存在")
         }else{
-            res.render('mand',{title: 'Express',data:result,s_name:name,s_userid:userid});
+            res.render('mand',{data:result,sname:name});
         }
     })
 })

@@ -14,7 +14,17 @@ router.get('/',(req,res)=>{
         if(err){
             console.log(err)
         }
-        res.render('shopping',{data:result})
+        res.render('index',{data:result})
     })
 });
+router.post('/',(req,res)=>{
+    var name=req.body.sname;
+    var sql="select * from product where pname='"+name+"' or type='"+name+"'";
+    connection.query(sql,(err,result)=>{
+        if(err){
+            console.log(err)
+        }
+        res.render("index",{title: 'Express',data:result,sname:name})
+    })
+})
 module.exports=router;

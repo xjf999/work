@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/layui.css">
+<body>
+    <table class="layui-table">
+        <thead>
+            <tr>
+                <th>商品名</th>
+                <th>图片</th>
+                <th>价格</th>
+                <th>买家邮箱</th>
+                <th>买家名</th>
+            </tr>
+        </thead>
+        <tbody>
+  <% for(let o of data){ %>	
+            <tr>
+            
+                <td><%=o.pname%></td>
+                <td><img src="<%=o.img%>"/></td>
+                <td><%=o.price%></td>
+                <td><%=o.useremail%></td>
+                <td><%=o.username%></td>
+            </tr>
+  <%}%>
+        </tbody>
+    </table>
+</body>
+</html>

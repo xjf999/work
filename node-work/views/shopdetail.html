@@ -9,12 +9,16 @@
 <body>
 <!-----商品详情部分------->
 <div class="shopdetails">
+	<a href="/" >
+		
+		返回
+	</a>
 	<!-------放大镜-------->
 	<div id="leftbox">
         <div id="showbox">
-        <%for(let o of data){%>
-
-  <img src="http://localhost:3000/<%=o.img%>" width="400" height="550" />
+          <%for(let o of data){%>
+         <a href="/shopdetail/<%=o.id%>" ><input type="image" src="http://localhost:3000/<%=o.img%>" width="400" height="550"  alt="" name="img" /></a>
+		</div>
  
 
 	</div><!--展示图片盒子-->
@@ -27,13 +31,32 @@
 	</div>
     <!----中间----->
 
-    <div class="centerbox">
-
-    	<p class="imgname"><%=o.pname%></p>
-    	<p class="Aprice">价格：<samp><%=o.price%></samp></p>
-    	<p class="price">促销价：<samp><%=o.pprice%></samp></p>
+    <div class="centerbox"  >
+    	<p class="imgname" ><input name="name" value="<%=o.pname%>" style="outline:medium;
+		border-width:0;" /></p>
+    	<p class="Aprice">价格：<samp><input value="<%=o.price%>" style="outline: medium;
+		border-width: 0;     text-decoration: line-through;	"  name="price" /></samp></p>
+    	<p class="price">促销价：<samp><input value="<%=o.pprice%>" style="color: #D00;
+			font-size: 20px;
+			font-weight: bold;
+			outline: medium;
+			border-width: 0;" name="pprice" /></samp></p>
         <div class="clear"></div>
-        <p class="buy"><a href="#" id="firstbuy">立即购买</a><a href="#">加入购物车</a></p>
+        <p class="buy">
+			<a href="/buy" id=""><input style=" display: block;
+				width: 203px;
+				height: 51px;
+				color: #000;
+				border: 1px solid #ccc;
+				float: left;
+				font-size: 16px;
+				font-weight: bold;
+				font-family: Microsoft YaHei,arial;
+				margin-left: -1px;
+				background-color: #fff;
+				text-align: center;
+				line-height: 50px;" type="button" id="<%=o.id%>"  value="立即购买" /></a>
+		</p>
    		<div class="clear"></div>
 
         <p class="fuwu">服务承诺： <img src="http://localhost:3000/images/tell08.png" style="margin: -3px;
@@ -42,6 +65,7 @@
     
     </div>
     <%}%>
+</div>
 </body>
 <script src="http://localhost:3000/javascripts/jquery-1.9.1.min.js"></script>
 <script src="http://localhost:3000/javascripts/common.js"></script>
@@ -90,10 +114,7 @@
 			});
 		
 			
-});
-	
-			
-		
-		
+});	
 </script>
+
 </html>

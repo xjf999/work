@@ -1,6 +1,6 @@
 let express=require('express');
-var mysql=require('mysql');
-var crypto=require('crypto');
+let router=express.Router();
+let mysql=require('mysql');
 var connection = mysql.createConnection({
     host:"localhost",
     user:"root",
@@ -8,33 +8,26 @@ var connection = mysql.createConnection({
     port:"3306",
     database:"project"
 });
-
-let router=express.Router();
 router.get('/',(req,res)=>{
     res.render("signin")
 });
 router.post('/',(req,res)=>{
     let email=req.body.email;
-    let name=req.body.name;
     let password=req.body.password;
-    var hash=crypto.createHash('md5');
-    hash.update(password);
-    password=hash.digest('hex');
-    var sql='select * from  user where useremail = "'+req.body.email+'" and userpassword = "'+req.body.password+'"';
+    let sql='select * from  user where useremail = "'+email+'" and userpassword = "'+password+'"';
     connection.query(sql,(err,result)=>{
         if(err){
           console.log(err)  ;
           return;
         };
-
         var user=result[0];
+        console.log(user);
         if(!user){
             res.send("email或密码错误")
             return;
         }
-        req.session.user=user;
-        res.redirect("/shopping");
+        res.redirect("/");
      });
-
+     user=req.session.user;
 })
 module.exports=router;

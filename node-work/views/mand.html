@@ -1,95 +1,189 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="author" content="order by dede58.com"/>
-<title>后台首页</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/css/reset.css"/>
-<link rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/css/common.css"/>
-<link rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/css/thems.css">
-</head>
+<!DOCTYPE html>
+<html>
 
-<body>
-<div class="mian clearfix">
-<div class="header clearfix">
-	<div class="head_l">
-    	<div class="logo"><a href="">&nbsp;</a></div>
-        <span><a href="">北京大战子宠物店</a></span>
-    </div>
-    <div class="head_r">
-    	<span>欢迎您，管理员 晚上好！</span>
-        <a href="">注销</a>
-    </div>
-</div>
-<div class="nav">
-	<ul class="clearfix">
-    	<li class="now"><a href="">首页</a></li>
-        <li class="line">&nbsp;</li>
-        <li><a href="">宠物店</a></li>
-        <li class="line">&nbsp;</li>
-        <li><a href="">摄像头</a></li>
-        <li class="line">&nbsp;</li>
-        <li><a href="">安全日记</a></li>
-        <li class="line">&nbsp;</li>
-        <li><a href="">在线帮助</a></li>
-    </ul>
-</div>
-<div class="maina">
-	<!--查询-->
-    <div class="refer">
-    	<form action="/mand/search" method="post">
-    	<span class="r1">精确查询</span>
-        <span class="name">联系人：<input name="s_name" type="text" value="<%=data[0].name%>"></span>
-        <span class="userid">UserID：<input name="s_userid" type="text" value="<%=data[0].userid%>"></span>
-        <input type="submit" value="查询">
-        </form>
-    </div>
-    <!--查询-->
-    <table border="0" cellpadding="0" cellspacing="0">
-      <thead>
-        <tr class="title">
-          <th width="105" scope="col">宠物店名称</th>
-          <th width="205" scope="col">宠物店地址</th>
-          <th width="72" scope="col">联系人</th>
-          <th width="120" scope="col">联系方式</th>
-          <th width="90" scope="col">ID</th>
-          <th width="75" scope="col">UserID</th>
-          <th width="145" scope="col">操作</th>
-        </tr>
-      </thead>
-     <tbody id="add"> 
-    <%for(let o of data){%>
-      <tr>
-        <td><%=o.name%></td>
-        <td><%=o.address%></td>
-        <td><%=o.people%></td>
-        <td><%=o.phone%></td>
-        <td><%=o.id%></td>
-        <td><%=o.userid%></td>
-        <td><a href="/add">新增</a></td>
-        <td><a href="/mand/<%= o.id%>"><input type="button" data-id="<%= o.id%>"  value="删除" /></a></td>
-        <td><a href="/check/<%= o.id%>" ><input type="button" value="编辑" data-id="<%= o.id%>" ></a></td>
-      </tr>
-      <%}%>
-     </tbody>
-    </table>
-	<!--分页-->
-    <div class="page">
-    	<span>共300条数据</span>
-        <span>第1-10条</span>
-        <a href="">首页</a>
-        <a href="">上一页</a> 
-        <a href="" class="now_p">1</a> 
-        <a href="">2</a> 
-        <a href="">3</a> 
-        <a href="">4</a> 
-        <a href="">5</a> 
-        <a href="">上一页</a> 
-        <a href="">末页</a> 
-        <span>跳到第<a href="">&nbsp;</a>页</span>
-         
-    </div>
-    <!--分页-->
-</div>
-</div>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+		
+		<meta name="renderer" content="webkit">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="穷在闹市" />
+	
+		<meta name="revised" content="穷在闹市.v3, 2019/05/01" />
+	
+		<meta name="description" content="网站简介" />
+		
+		<meta name="keywords" content="搜索关键字，以半角英文逗号隔开" />
+		<title>后台首页</title>
+
+		<!-- 公共样式 开始 -->
+		<link rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/base.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/iconfont.css">
+		<script type="text/javascript" src="http://localhost:3000/javascripts/jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/layui.css">
+		<script type="text/javascript" src="http://localhost:3000/javascripts/layui.js"></script>
+		<!-- 滚动条插件 -->
+		<link rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/jquery.mCustomScrollbar.css">
+		<script src="http://localhost:3000/javascripts/jquery-ui-1.10.4.min.js"></script>
+		<script src="http://localhost:3000/javascripts/framework/jquery.mousewheel.min.js"></script>
+		<script src="http://localhost:3000/javascripts/framework/jquery.mCustomScrollbar.min.js"></script>
+		<script src="http://localhost:3000/javascripts/framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
+    <script type="text/javascript" src="http://localhost:3000/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="http://localhost:3000/javascripts/pageGroup.js"></script>
+		<!-- 公共样式 结束 -->
+    <style type="text/css">
+      *{ margin:0px; padding:0px;}
+      ul{ list-style:none;}
+      body{ font-size:12px;}
+      /*分页*/
+      #pageGro{ width:22%; height:25px; margin:0px auto; padding-top:50px;}
+      #pageGro div,#pageGro div ul li{ font-size:12px; color:#999; line-height:23px; float:left; margin-left:5px;}
+      #pageGro div ul li{ width:22px; text-align:center; border:1px solid #ef4949; cursor:pointer;color: #000;}
+      #pageGro div ul li.on{ color:#fff; background:#ef4949; border:1px solid #ef4949;}
+      #pageGro .pageUp,#pageGro .pageDown{ width:63px; text-align: center; border:1px solid #ef4949; cursor:pointer;color:#000;}
+      </style>
+
+	</head>
+
+	<body>
+		<div class="cBody">
+			<div class="console">
+				<form class="layui-form" action="/mand/search" method="POST" >
+					<div class="layui-form-item">
+						<div class="layui-input-inline">
+							<input type="text" name="sname" required lay-verify="required" placeholder="search everything" autocomplete="off" class="layui-input">
+						</div>
+						<button class="layui-btn" lay-submit lay-filter="formDemo">检索</button>
+					</div>
+				</form>
+
+				<script>
+					layui.use('form', function() {
+						var form = layui.form;
+				
+						//监听提交
+						form.on('submit(formDemo)', function(data) {
+							layer.msg(JSON.stringify(data.field));
+							return false;
+						});
+					});
+				</script>
+			</div>
+			
+			<table class="layui-table">
+				<thead>
+					<tr>
+						<th>名称</th>
+						<th>编码</th>
+						<th>所属区域</th>
+						<th>负责人</th>
+						<th>登录名</th>
+						<th>联系方式</th>
+						<th>userid</th>
+						<th>邮箱</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+          <% for(let o of data){ %>	
+         <tr>
+				    
+						<td><%=o.name%></td>
+						<td><%=o.id%></td>
+						<td><%=o.address%></td>
+						<td><%=o.people%></td>
+						<td><%=o.name%></td>
+						<td><%=o.phone%></td>
+						<td><%=o.userid%></td>
+						<td><%=o.name%></td>
+						<td>
+              <a href="/add"><button class="layui-btn layui-btn-xs">新增</button></a>
+							<a href="/mand/<%= o.id%>"><button class="layui-btn layui-btn-xs">删除</button></a>
+							<a href="/check/<%= o.id%>" ><button class="layui-btn layui-btn-xs">修改</button></a>
+						</td>
+           
+					</tr>
+          <%}%>
+				</tbody>
+			</table>
+      <div id="pageGro">
+        <div class="pageUp">上一页</div>
+        <div class="pageList">
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+          </ul>
+        </div>
+        <div class="pageDown">下一页</div>
+      </div>
+		</div>
+    <script type="text/javascript">
+    
+    	//页面加载完成是与后台数据交互，后台返回总页数（如果只有总条数的话就自己算。Math.ceil(总条数/每条多少页)=总页数）
+		var pageCount = 10;//后台返回的总页数
+		icon_load(pageCount);
+    	//点击分页按钮触发
+		$(document).on("click","#pageGro li",function(){
+			var pageNum = parseInt($(this).html());//获取当前页数
+			var selector = $(this);
+			
+			//这里写ajax数据交互,json.html为后台，返回了总页数。实际开发中请删除json.html文件，
+			//$.post('json.html',{},function(rs){
+				//判断请求是否成功，后台一般会给一个标识。
+				//if(true){
+					
+					//成功后生成分页按钮
+					num_click(pageCount,pageNum,selector);
+					
+				//}else{
+					//alert('这里就表示获取后台的数据失败了');
+				//}
+			//},'json');
+		});
+		
+		//点击上一页触发
+		$(document).on("click","#pageGro .pageUp",function(){
+			var pageNum = parseInt($("#pageGro li.on").html());//获取当前页
+			var index = $("#pageGro ul li.on").index();//获取index
+			
+			//这里写ajax数据交互,json.html为后台，返回了总页数。实际开发中请删除json.html文件，
+			//$.post('json.html',{},function(rs){
+				//判断请求是否成功，后台一般会给一个标识。
+				//if(true){
+					
+					//成功后生成分页按钮
+					pageUp_click(pageCount,pageNum,index);
+					
+				//}else{
+					//alert('这里就表示获取后台的数据失败了');
+				//}
+			//},'json');
+		});
+		
+		//点击下一页触发
+		$(document).on("click","#pageGro .pageDown",function(){
+			var pageNum = parseInt($("#pageGro li.on").html());//获取当前页
+			var index = $("#pageGro ul li.on").index();//获取index
+			
+			//这里写ajax数据交互,json.html为后台，返回了总页数。实际开发中请删除json.html文件，
+			//$.post('json.html',{},function(rs){
+				//判断请求是否成功，后台一般会给一个标识。
+				//if(true){
+					
+					//成功后生成分页按钮
+					pageDown_click(pageCount,pageNum,index);
+					
+				//}else{
+					//alert('这里就表示获取后台的数据失败了');
+				//}
+			//},'json');
+			
+		});
+    </script>
+	</body>
+
 </html>

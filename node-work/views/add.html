@@ -4,20 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>add</title>   
-    <link rel="stylesheet" type="text/css" href="stylesheets/css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/css/thems.css">
+    <title>add</title>  
+    <link type="text/css" href="stylesheets/pixel.css" rel="stylesheet"> 
 </head>
 <body>
+    <section class="min-vh-100 d-flex align-items-center">
+    <div class="bg-img-holder section-image top-0 left-0 col-lg-6 col-xl-7 z-10 vh-100 d-none d-lg-block">
+        <img src="images/img/blog.jpg"/>
+    </div>
+    <span class="clearfix"></span>
     <form action="/add" method="POST">
-        <input placeholder="宠物店名称" name="name" type="text">
-        <input placeholder="宠物店地址" name="address" type="text">
-        <input placeholder="联系人" name="people" type="text">
-        <input type="text" placeholder="联系方式" name="phone">
-        <input type="text" placeholder="userid" name="userid">
-        <br/>
-        <input type="submit" placeholder="提交">
+        <div class="form-group"  >
+            <div class="input-group"  >
+                <div class="input-group-prepend"  >
+                    <span class="input-group-text" ><i class="far fa-user"></i></span>
+                </div>
+                <input name="name" type="text" class="form-control" id="input-email"
+                    placeholder="名称" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                </div>
+                <input name="address" class="form-control" placeholder="地址" type="text" id="username" required>
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="far fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                </div>
+                <input name="people" class="form-control" id="userpsw" placeholder="联系人" type="text"  required>
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="far fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                </div>
+                <input name="phone"  class="form-control" id="repeatpsw" placeholder="联系方式" type="text" required>
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="far fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                </div>
+                <input name="userid" class="form-control" id="repeatpsw" placeholder="userid" type="text" required>
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="far fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <button type="submit" class="btn btn-block btn-primary" id="signin" >提交</button>
+        </div>
     </form>
+</section>
 </body>
 </html>

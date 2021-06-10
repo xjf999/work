@@ -1,157 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Lazy - Bootstrap UI Kit</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="A new design system for developing with less effort.">
-    <meta name="author" content="BootstrapBay">
 
-    <link href="images/img/favicon.ico" rel="icon" type="image/png">
-    
-    <link rel="stylesheet" href="stylesheets/vendor/bootstrap/bootstrap.min.css">
-		<link rel="stylesheet" href="stylesheets/css/lazy.css">
-		<link rel="stylesheet" href="stylesheets/css/demo.css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link type="text/css" href="stylesheets/pixel.css" rel="stylesheet">
-  </head>
-  <body class="index">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="./"><img src="images/img/logo.svg" alt="Example Navbar 1" class="mr-2" height="30"> Lazy cat</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown-7" aria-controls="navbarNavDropdown-7"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown-7">
-          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link" data-toggle="dropdown" role="button">
-                    <i class="fas fa-angle-down nav-link-arrow"></i>
-                    <span class="nav-link-inner-text">About</span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/about-startup" target="_blank" >About Lazycat</a></li>
-                    
-                    <li><a class="dropdown-item" href="/contact" target="_blank">Contact</a></li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剁手网</title>
+    <link rel="stylesheet" href="stylesheets/produce.css">
+</head>
+
+<body>
+
+    <div class="shortcut" id="top">
+        <div class="w">
+            <div class="fl">
+                <ul>
+                    <li>天猫欢迎您!　</li>
+                    <li>
+                        <a href="/signin">请登录</a>
+                        <a href="/siginup" class="style-red">免费注册</a>
+                    </li>
                 </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link" data-toggle="dropdown" role="button">
-                    <i class="fas fa-angle-down nav-link-arrow"></i>
-                    <span class="nav-link-inner-text">Support</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg">
-                    <div class="col-auto px-0" data-dropdown-content>
-                        <div class="list-group list-group-flush">
-                            <a href="./docs/introduction.html" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
-                                <span class="icon icon-sm icon-secondary"><i class="fas fa-file-alt"></i></span>
-                                <div class="ml-4">
-                                    <span class="text-dark d-block">Documentation<span class="badge badge-sm badge-secondary ml-2">v1.0</span></span>
-                                    <span class="small">Examples and guides</span>
-                                </div>
-                            </a>
-                            <a href="https://themesberg.com/contact" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
-                                <span class="icon icon-sm icon-primary"><i class="fas fa-microphone-alt"></i></span>
-                                <div class="ml-4">
-                                    <span class="text-dark d-block">Support</span>
-                                    <span class="small">Looking for answers? Ask us!</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-              <li class="nav-item dropdown">
-                  <a href="#" class="nav-link" data-toggle="dropdown" role="button">
-                      <i class="fas fa-angle-down nav-link-arrow"></i>
-                      <span class="nav-link-inner-text">shop</span>
-                  </a>
-                  <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="/shopping" target="_blank" >shopping</a></li>
-                  </ul>
-           
-        </ul>
-      </div>
-    
-      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-        <li class="nav-item dropdown">
-            <a href="#" class="nav-link" data-toggle="dropdown" role="button">
-                <i class="fas fa-angle-down nav-link-arrow"></i>
-                <span class="nav-link-inner-text">Reister/Signin</span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/signin" target="_blank">Login</a></li>
-            </ul>
-        </li>
-      </ul>
-    </nav>
+            </div>
+            <div class="fr">
+                <ul>
+                    <li><a href="./电商-提交订单.html">我的订单</a></li>
+                    <li class="spacer"></li>
+                    <li>
+                        <a href="#">我的天猫</a>
+                    </li>
+                    <li><a href=""><b></b></a></li>
 
-	<div class="page-hero bg-primary text-white" id="banner">
-		<div class="bubbles d-none d-md-block">
-<!-- 				bubbles -->
-      <div class="bubble bubble-1 rotate-bubble bg-warning"></div>
-      <div class="bubble bubble-2 bubble-bottom-right bg-danger rotate-bubble"></div>
-      <div class="bubble bubble-3 bubble-top-right bg-warning rotate-bubble"></div>
-      <div class="bubble bubble-4 bubble-top-left bg-info rotate-bubble"></div>
-      <div class="bubble bubble-5 bg-info rotate-bubble"></div>
-      <div class="bubble bubble-6 bubble-bottom-right bg-danger rotate-bubble"></div>
-      <div class="bubble bubble-7 bubble-top-right bg-success rotate-bubble"></div>
-      <div class="bubble bubble-8 bubble-top-left bg-success rotate-bubble"></div>
-      <div class="bubble bubble-9 bg-warning rotate-bubble"></div>
-      <div class="bubble bubble-10 bg-danger rotate-bubble"></div>
-      <div class="bubble bubble-11 bubble-bottom-right bg-info rotate-bubble"></div>
-      <div class="bubble bubble-12 bubble-top-right bg-success rotate-bubble"></div>
-      <div class="bubble bubble-13 bubble-top-left bg-success rotate-bubble"></div>
-<!--         circles -->
-      <div class="circle circle-1 bg-light rotate-circle"></div>
-      <div class="circle circle-2 bg-success rotate-circle"></div>
-      <div class="circle circle-3 bg-danger rotate-circle"></div>
-      <div class="circle circle-4 bg-info rotate-circle"></div>
-      <div class="circle circle-5 bg-success rotate-circle"></div>
-      <div class="circle circle-6 bg-info rotate-circle"></div>
-      <div class="circle circle-7 bg-warning rotate-circle"></div>
-      <div class="circle circle-8 bg-white rotate-circle"></div>
-      <div class="circle circle-9 bg-warning rotate-circle"></div>
-      <div class="circle circle-10 bg-danger rotate-circle"></div>
-		</div>
-  	<div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-8  offset-lg-2 text-center">
-	          <div class="title">
-	            <h1 class="display-2 text-white">Lazy Cat</h1>
-	            <h4 class="text-white">A new design system for developing with less effort.</h4>
-	          </div>
-            <div class="credits">
-							<p class="text-white mb-0 small">Made with <span class="text-danger"><i class="fas fa-heart"></i></span> by</p>
-							<img src="images/img/bb_logo_white.png" alt="Lazy Kit" width="150">
+                    <li class="spacer"></li>
+                    <li><a href="#">天猫购会员</a></li>
+                    <li class="spacer"></li>
+                    <li><a href="#">企业采购</a></li>
+                    <li class="spacer"></li>
+                    <li>
+                        <a href="#">关注天猫</a>
+                    </li>
+                    <li><a href=""><b></b></a></li>
+                    <li class="spacer"></li>
+                    <li>
+                        <a href="#">客户服务</a>
+                    </li>
+                    <li><a href=""><b></b></a></li>
+
+                    <li class="spacer"></li>
+                    <li>
+                        <a href="#">网站导航</a>
+                    </li>
+                    <li><a href=""><b></b></a></li>
+
+                </ul>
             </div>
         </div>
-      </div>
     </div>
-	</div>
+    <div class="header w">
 
-<div class="intro bg-light">
-  <div class="container">
-    <div class="section desc">
-	    <div class="row">
-		    <div class="col-12 col-md-8 offset-md-2">
-							<p class="lead"><b>Lazy Cat</b> is a complete design system built on Bootstrap 4. It is created for all web makers that want to get a project off the ground quickly and neatly. It overwrites all Bootstrap 4 components and adds 2 more plugins. It also comes with 3 example pages.</p>
-		    </div>
-	    </div>
+        <div class="logo">
+            <h1><a href="" title="品优购 ">天猫 </a></h1>
+        </div>
+
+        <form action="/" method="POST">
+            <div class="search">
+                <input type="text" class="text" placeholder="search everything" name="sname">
+                <button class="btn" type="submit">搜索</button>
+            </div>
+        </form>
+
+        <div class="hotwrods">
+            <a href="#" class="style-red">优惠购首发</a>
+            <a href="#">亿元优惠</a>
+            <a href="#">9.9元团购</a>
+            <a href="#">美满99减30</a>
+            <a href="#">办公用品</a>
+            <a href="#">电脑</a>
+            <a href="#">通信</a>
+        </div>
+
+        <a href="/cart">
+            <div class="shopcar">
+                <span class="iconfont" style="color:red;">&#xe60d;</span>　我的购物车<i class="arrow">></i>
+                <i class="count1">12</i>
+            </div>
+        </a>
     </div>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="stylesheets/vendor/jquery/jquery.min.js"></script>
-    <script src="stylesheets/vendor/popper/popper.min.js"></script>
-    <script src="stylesheets/vendor/bootstrap/bootstrap.min.js" ></script>
+    <div class="shophome">
+        <div class="holdset">
+            <div class="setshopbox">
+                <div class="shop shopnamefasion">
+                    <h3>潮流女装店</h3>
+                    <% for(let i of data){ %>
+                    <div class="ware">
+                        <div class="warepic"><a href="/shopdetail/<%=i.id%>"><img src="<%=i.img%>" alt=""></a></div>
+                        <div class="wareinfo">
+                            <p><%=i.pname%></p>
+                            <p><%=i.price%></p>
+                            <div class="count">
+                                <button class="reduce">-</button>
+                                <div class="num">1</div>
+                                <button class="add">+</button>
+                                <a href=""><button class="addcar">加入购物车</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+                
+                
+                    
+                    
 
-    <!-- optional plugins -->
-    <script src="stylesheets/vendor/nouislider/js/nouislider.min.js"></script>
+                </div>
 
-    <!--   lazy javascript -->
-    <script src="javascripts/js/lazy.js"></script>
-  </body>
+            </div>
+        </div>
+    </div>
+    <script src="javascripts/shop.js"></script>
+</body>
+
 </html>

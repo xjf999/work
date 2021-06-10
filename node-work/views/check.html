@@ -4,21 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link type="text/css" href="http://localhost:3000/stylesheets/pixel.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost:3000/stylesheets/css/aos.css">
-    <link rel="stylesheet" href="http://localhost:3000/stylesheets/css/style.css">
+    <title>check</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="http://localhost:3000/images/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:3000/images/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:3000/images/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="http://localhost:3000/images/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="http://localhost:3000/images/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link type="text/css" href="http://localhost:3000/stylesheets/pixel.css" rel="stylesheet"> 
 </head>
 <body>
-    <form action="/check" method="POST">
-        <input placeholder="id" name="id" type="text" style="display: none;" value="<%= data[0].id%>">
-        <input placeholder="宠物店名称" name="name" type="text" value="<%= data[0].name %>">
-        <input placeholder="宠物店地址" name="address" type="text" value="<%= data[0].address%>">
-        <input placeholder="联系人" name="people" type="text" value="<%=data[0].people %>" >
-        <input placeholder="联系方式" name="phone" type="text" value="<%=data[0].phone %>" >
-        <input placeholder="userid" name="userid" type="text" value="<%=data[0].userid %>" >
-        <br/>
-        <input type="submit" placeholder="提交">
-    </form>
+    <section class="min-vh-100 d-flex align-items-center">
+        <div class="bg-img-holder section-image top-0 left-0 col-lg-6 col-xl-7 z-10 vh-100 d-none d-lg-block">
+            <img src="http://localhost:3000/images/img/blog.jpg"/>
+        </div>
+        <span class="clearfix"></span>
+        <form action="/check" method="POST">
+            <div class="form-group" style="display: none;" >
+                <div class="input-group" style="display: none;" >
+                    <div class="input-group-prepend" style="display: none;" >
+                        <span class="input-group-text" style="display: none;" ><i class="far fa-user"></i></span>
+                    </div>
+                    <input placeholder="id" name="id" type="text" style="display: none;" value="<%= data[0].id%>">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-user"></i></span>
+                    </div>
+                    <input name="name" type="text" class="form-control"  value="<%= data[0].name %>" id="input-email"
+                        placeholder="名称" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                    </div>
+                    <input name="address" class="form-control" placeholder="地址" type="text" id="username" value="<%= data[0].address %>" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <i class="far fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                    </div>
+                    <input name="people" class="form-control" id="userpsw" placeholder="联系人" type="text" value="<%= data[0].people %>" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <i class="far fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                    </div>
+                    <input name="phone"  class="form-control" id="repeatpsw" placeholder="联系方式" type="text" value="<%= data[0].phone %>" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <i class="far fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                    </div>
+                    <input name="userid" class="form-control" id="repeatpsw" placeholder="userid" type="text" value="<%= data[0].userid %>" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <i class="far fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <button type="submit" class="btn btn-block btn-primary" id="signin" >提交</button>
+            </div>
+        </form>
+    </section>
 </body>
 </html>

@@ -16,4 +16,19 @@ router.get('/:id',(req,res)=>{
     })
     
 })
+router.get('/',(req,res)=>{
+    var id=req.params.id;
+    var img=req.body.img;
+    var name=req.body.name;
+    var price=req.body.price;
+    var pprice=req.body.pprice;
+    console.log(img,name,pprice,price);
+    var sql="insert into cart(img,name,price,reprice) values('"+img+"','"+name+"','"+price+"','"+pprice+"') ";
+    connection.query(sql,(err,result)=>{
+        if(err){
+            console.log(err)
+        }
+        res.redirect('/cart')
+    })
+})
 module.exports=router;

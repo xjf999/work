@@ -4,16 +4,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var ejs = require('ejs');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var siginRouter = require('./routes/signin');
 var siginupRouter = require('./routes/siginup');
-var aboutRouter = require('./routes/about');
 var mandRouter = require('./routes/mand');
 var addRouter = require('./routes/add');
 var checkRouter = require('./routes/check');
 var shopRouter = require('./routes/shopdetail');
-var alaskaRoter = require('./routes/Alaska');
+var cartRouter = require('./routes/cart');
+var buyRouter = require('./routes/buy');
 
 var app = express();
 
@@ -25,18 +27,27 @@ app.set('view engine', 'html');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser(""));
+app.use(cookieParser("123"));
+app.use(session({
+  secret:"123",
+  cookie:{
+    maxAge:600000
+  },
+  resave:false,
+  saveUninitialized:true,
+  name:"cookie_name"
+}))
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/signin',siginRouter);
 app.use('/siginup',siginupRouter);
-app.use('/about-startup',aboutRouter);
 app.use('/mand',mandRouter);
 app.use('/add',addRouter);
 app.use('/check',checkRouter);
 app.use('/shopdetail',shopRouter);
-app.use('/Alaska',alaskaRoter);
+app.use('/cart',cartRouter);
+app.use('/buy',buyRouter);
 
 
 // catch 404 and forward to error handler

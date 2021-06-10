@@ -108,7 +108,7 @@ img{ border:0px;}
 	width:1200px; height:39px; 
 	margin:0 auto;
 	line-height:39px; 
-	background-image:url(../images/index_img/backmenuimg.jpg);
+	background-image:url(/images/backmenuimg.jpg);
 	padding:0;
 	position:relative;
 	}
@@ -233,9 +233,6 @@ img{ border:0px;}
 	font-family:"微软雅黑";
 	padding-left:10px;
 	
-}
-.centerbox .Aprice, .price, .youhui{
-	background:rgba(232,232,232,0.5);
 }
 .centerbox .Aprice samp{
 	font-size:14px;
